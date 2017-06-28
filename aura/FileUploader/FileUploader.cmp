@@ -1,0 +1,23 @@
+<!--
+ - Created by Archana on 28-06-2017.
+ -->
+
+<aura:component description="FileUploader" implements="force:appHostable,flexipage:availableForAllPageTypes" controller="FileUploadController">
+    <aura:attribute name="fileToBeUploaded" type="Object[]"/>
+    <div class=" slds-box">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+                <lightning:input aura:id="file-input" type="file"
+
+                                 files="{!v.fileToBeUploaded}"
+                                 onchange="{!c.onFileUploaded}"
+                                 accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                                 label=" "
+                                 name="file" multiple="true"/>
+            </div>
+            <div aura:id="progressBar" class="slds-hide slds-size_1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2  slds-m-top--medium slds-align_absolute-center">
+                <c:IndeterminateProgressBar/>
+            </div>
+        </div>
+    </div>
+</aura:component>
